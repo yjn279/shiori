@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+:root {
+  /* Warm beige/cream base palette - inspired by traditional paper shiori */
+  --background: #faf6f1;
+  --foreground: #3d3832;
+  
+  /* Primary - warm olive/brown accent */
+  --primary: #6b7c5e;
+  --primary-foreground: #faf6f1;
+  
+  /* Secondary - warm cream for cards */
+  --secondary: #f5efe6;
+  --secondary-foreground: #3d3832;
+  
+  /* Muted - soft beige */
+  --muted: #e8e0d5;
+  --muted-foreground: #7a7267;
+  
+  /* Accent - autumn orange/terracotta */
+  --accent: #c4956a;
+  --accent-foreground: #3d3832;
+  
+  /* Card background */
+  --card: #ffffff;
+  --card-foreground: #3d3832;
+  
+  /* Border - soft warm gray */
+  --border: #e0d8ce;
+  
+  /* Input */
+  --input: #e8e0d5;
+  
+  /* Ring */
+  --ring: #6b7c5e;
+  
+  /* Destructive */
+  --destructive: #c55a5a;
+  --destructive-foreground: #faf6f1;
+  
+  /* Radius */
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --radius: var(--radius);
+  --font-sans: var(--font-noto-sans-jp), system-ui, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Torn paper edge effect */
+.paper-edge {
+  position: relative;
+}
+
+.paper-edge::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 16px;
+  background: 
+    linear-gradient(135deg, var(--card) 25%, transparent 25%) -8px 0,
+    linear-gradient(225deg, var(--card) 25%, transparent 25%) -8px 0,
+    linear-gradient(315deg, var(--card) 25%, transparent 25%),
+    linear-gradient(45deg, var(--card) 25%, transparent 25%);
+  background-size: 16px 16px;
+  background-position: bottom;
+}
+
+/* Tape effect */
+.tape {
+  position: relative;
+}
+
+.tape::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 60px;
+  height: 20px;
+  background: rgba(255, 243, 205, 0.7);
+  border-radius: 2px;
+}
+
+/* Handwritten style underline */
+.hand-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.hand-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent);
+  opacity: 0.4;
+  border-radius: 2px;
+  transform: rotate(-0.5deg);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
