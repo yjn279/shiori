@@ -335,3 +335,57 @@ export function getRecentTrips(limit: number = 5): ShioriWithMembers[] {
     )
     .slice(0, limit);
 }
+
+// Wishlist places
+export interface WishlistPlace {
+  id: string;
+  name: string;
+  region: string;
+  imageUrl: string;
+  note?: string;
+}
+
+export const mockWishlistPlaces: WishlistPlace[] = [
+  {
+    id: "place-1",
+    name: "屋久島",
+    region: "鹿児島県",
+    imageUrl: "https://images.unsplash.com/photo-1528164344705-47542687000d?w=400&h=300&fit=crop",
+    note: "縄文杉を見てみたい",
+  },
+  {
+    id: "place-2",
+    name: "金沢",
+    region: "石川県",
+    imageUrl: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=400&h=300&fit=crop",
+    note: "兼六園と21世紀美術館",
+  },
+  {
+    id: "place-3",
+    name: "直島",
+    region: "香川県",
+    imageUrl: "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=400&h=300&fit=crop",
+    note: "アートの島めぐり",
+  },
+  {
+    id: "place-4",
+    name: "宮古島",
+    region: "沖縄県",
+    imageUrl: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop",
+    note: "透き通る海でシュノーケリング",
+  },
+  {
+    id: "place-5",
+    name: "尾道",
+    region: "広島県",
+    imageUrl: "https://images.unsplash.com/photo-1480796927426-f609979314bd?w=400&h=300&fit=crop",
+    note: "坂道と猫のある街",
+  },
+  {
+    id: "place-6",
+    name: "白川郷",
+    region: "岐阜県",
+    imageUrl: "https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=400&h=300&fit=crop",
+    note: "冬のライトアップを見たい",
+  },
+];
